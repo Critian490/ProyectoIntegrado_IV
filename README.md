@@ -69,3 +69,15 @@ Si deseas aprender más sobre cómo probar código en Python, revisa:
 - [Effective Python Testing With Pytest](https://realpython.com/pytest-python-testing/)
 - [The Hitchhiker’s Guide to Python: Testing Your Code](https://docs.python-guide.org/writing/tests/)
 
+## Estructura del proyecto:
+ProyectoIntegradoIV/
+├── dataset/                # Conjuntos de datos utilizados
+├── images/                 # Imágenes y recursos gráficos
+├── queries/                # Consultas SQL u otras
+├── src/                    # Código fuente principal
+├── tests/                  # Pruebas unitarias y de integración
+├── Project.ipynb           # Notebook principal del proyecto
+├── README.md               # Archivo README
+├── instrucciones.md        # Instrucciones adicionales
+├── olist.db                # Base de datos SQLite
+└── requirements.txt        # Dependencias del proyecto
