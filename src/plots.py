@@ -181,8 +181,14 @@ def plot_freight_value_weight_relationship(df: DataFrame):
     """
     # TODO: Representar gráficamente la relación entre el valor del flete y el peso usando un scatterplot de seaborn.
     # El eje x debe ser el peso (weight) y el eje y debe ser el valor del flete (freight value).
-
-    raise NotImplementedError
+    #--------------------Se inicia la solucion del punto--------------------------------------
+    plt.figure(figsize=(10, 6))
+    sns.scatterplot(data=df, x="weight", y="freight_value", alpha=0.5)
+    plt.xlabel("Weight")
+    plt.ylabel("Freight Value")
+    plt.title("Freight Value vs. Weight Relationship")
+    plt.grid(True)
+    plt.show()
 
 
 def plot_delivery_date_difference(df: DataFrame):
@@ -205,5 +211,18 @@ def plot_order_amount_per_day_with_holidays(df: DataFrame):
     # TODO: Graficar el monto de pedidos por día con los días festivos usando matplotlib.
     # Marcar los días festivos con líneas verticales.
     # Sugerencia: usar plt.axvline.
-
+    #--------------------Se inicia la solucion del punto--------------------------------------
+    plt.figure(figsize=(12, 6))
+    plt.plot(df["date"], df["order_amount"], marker="o", linestyle="-")
+    
+    for holiday in holidays:
+        plt.axvline(x=holiday, color='r', linestyle='--', alpha=0.7, label="Holiday" if 'Holiday' not in plt.gca().get_legend_handles_labels()[1] else "")
+    
+    plt.xlabel("Date")
+    plt.ylabel("Order Amount")
+    plt.title("Order Amount Per Day with Holidays")
+    plt.legend()
+    plt.xticks(rotation=45)
+    plt.grid(True)
+    plt.show()
     raise NotImplementedError
